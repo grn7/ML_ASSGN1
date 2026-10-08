@@ -1,16 +1,3 @@
-"""
-Second-stage search for ML Assignment 1 (IMT2024077) - STAGE 2.
-
-Reads outputs/top_configs_var<N>.csv produced by poly_regression.py, then:
-  - takes the degrees in the top configs (plus neighbours)
-  - runs a finer Ridge alpha search around the best Ridge alpha
-  - runs Lasso (L1) on those degrees only, with a finer alpha grid
-  - if Lasso wins, reports which polynomial terms / original features it kept
-Uses the SAME hold-out split and CV folds (same SEED) as poly_regression.py, so CV MSE is
-directly comparable. A *_refined.csv prediction file is written only if CV MSE improves.
-
-Run poly_regression.py first, then:  python3 refine_search.py
-"""
 import os
 os.environ["PYTHONWARNINGS"] = "ignore"  # silence Lasso ConvergenceWarning spam (also in workers)
 

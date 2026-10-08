@@ -1,19 +1,3 @@
-"""
-Polynomial regression for ML Assignment 1 (IMT2024077) - STAGE 1.
-
-For each problem (var1, var2):
-  1. Load train/test CSV.
-  2. Hold out 20% of train as a sanity-check (validation) set.
-  3. K-fold CV on the other 80% chooses degree, model type (least squares / Ridge / Lasso)
-     and alpha.
-  4. Degree sweep: for EVERY degree 1..max, fit plain least squares and Ridge (best alpha
-     for that degree from CV) and record train MSE, validation MSE and validation R2.
-     -> outputs/degree_sweep_var<N>.csv and .png  (use these for the report)
-  5. Refit the best config on the FULL train set and write <ROLL>_pred_var<N>.csv.
-
-Run:  python3 poly_regression.py
-Layout:  data/IMT2024077_train_var1.csv, data/IMT2024077_test_var1.csv, ... (same for var2)
-"""
 import os
 import numpy as np
 import pandas as pd
